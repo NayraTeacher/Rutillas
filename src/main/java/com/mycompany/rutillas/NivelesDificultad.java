@@ -9,6 +9,6 @@ package com.mycompany.rutillas;
  *
  * @author Nayra
  */
-public enum ClaseE {
-    App,Ap,A,B,C,D,E,F;
+public enum NivelesDificultad {
+    Facil,Medio,Dificil,Experto;
 }

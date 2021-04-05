@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.rutillas;
+package com.mycompany.rutillas.modelos;
 
 /**
  *
@@ -11,6 +11,7 @@ package com.mycompany.rutillas;
  */
 public class Usuario {
     
+    private int id;
     private String nombre;
     private String email;
     private String password;
@@ -24,10 +25,11 @@ public class Usuario {
         return sb.toString();
     }
 
-    public Usuario(String nombre, String email, String password) {
+    public Usuario(int id, String nombre, String email, String password) {
         this.nombre = nombre;
         this.email = email;
         this.password = password;
+        this.id = id;
     }
 
     public Usuario() {
@@ -103,5 +105,19 @@ public class Usuario {
         if (passw.matches(".*[A-Z].*") && passw.length() >=8) 
             ok = true;
         return ok;
+    }
+
+    /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id) {
+        this.id = id;
     }
 }
