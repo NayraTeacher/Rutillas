@@ -48,7 +48,7 @@ public class RutaDAO {
         sentencia.setString(1, ruta.getNombre());
         sentencia.setFloat(2, ruta.getDistancia());
         sentencia.setInt(3, ruta.getDesnivel());
-        sentencia.setString(4, ruta.getFecha());
+        sentencia.setDate(4, ruta.getFecha());
         sentencia.setString(5, ruta.getLocalizacion());
         sentencia.setInt(6, ruta.getDificultad());
         sentencia.setInt(7, ruta.getUsuario());
@@ -63,7 +63,7 @@ public class RutaDAO {
         sentencia.executeUpdate();
     }
 
-    public void modificarCoche(Ruta antigua, Ruta nueva) throws SQLException {
+    public void modificarRuta(Ruta antigua, Ruta nueva) throws SQLException {
         String sql = "UPDATE rutas SET nombre = ?, distancia = ?, desnivel = ?, fecha = ?, localizacion = ?"
                 + ", dificultad = ?, usuario = ? WHERE idruta = ?";
 
@@ -71,7 +71,7 @@ public class RutaDAO {
         sentencia.setString(1, nueva.getNombre());
         sentencia.setFloat(2, nueva.getDistancia());
         sentencia.setInt(3, nueva.getDesnivel());
-        sentencia.setString(4, nueva.getFecha());
+        sentencia.setDate(4, nueva.getFecha());
         sentencia.setString(5, nueva.getLocalizacion());
         sentencia.setInt(6, nueva.getDificultad());
         sentencia.setInt(7, nueva.getUsuario());
@@ -91,7 +91,7 @@ public class RutaDAO {
             ruta.setNombre(resultado.getString(2));
             ruta.setDistancia(resultado.getFloat(3));
             ruta.setDesnivel(resultado.getInt(4));
-            ruta.setFecha(resultado.getString(5));
+            ruta.setFecha(resultado.getDate(5));
             ruta.setLocalizacion(resultado.getString(6));
             ruta.setDificultad(resultado.getInt(7));
             ruta.setUsuario(resultado.getInt(8));

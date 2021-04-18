@@ -46,6 +46,7 @@ public class LoginController {
     @FXML
     private void register(){
         AlertsUtil.mostrarError("Registro aun no implementado");
+        
     }
     
 }

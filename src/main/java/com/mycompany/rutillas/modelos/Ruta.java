@@ -5,6 +5,8 @@
  */
 package com.mycompany.rutillas.modelos;
 
+import java.sql.Date;
+
 /**
  *
  * @author Nayra
@@ -14,14 +16,14 @@ public class Ruta {
     private String nombre;
     private float distancia;
     private int desnivel;
-    private String fecha;
+    private Date fecha;
     private String localizacion;
     private int dificultad;
     private int usuario;
     
     public Ruta(){}
     
-    public Ruta(int id, String nombre, float distancia, int desnivel, String fecha, String localizacion, int dificultad, int usuario){
+    public Ruta(int id, String nombre, float distancia, int desnivel, Date fecha, String localizacion, int dificultad, int usuario){
         this.id = id;
         this.nombre = nombre;
         this.distancia = distancia;
@@ -92,14 +94,14 @@ public class Ruta {
     /**
      * @return the fecha
      */
-    public String getFecha() {
+    public Date getFecha() {
         return fecha;
     }
 
     /**
      * @param fecha the fecha to set
      */
-    public void setFecha(String fecha) {
+    public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
 
