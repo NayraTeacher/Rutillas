@@ -1,0 +1,49 @@
+@startuml
+annotation java.lang.Override
+annotation javafx.fxml.FXML
+class com.mycompany.rutillas.App
+class com.mycompany.rutillas.OpinionsController
+class com.mycompany.rutillas.PrimaryController
+class com.mycompany.rutillas.SecondaryController
+class com.mycompany.rutillas.Usuario
+class java.io.IOException
+class java.net.URL
+class java.util.Arrays
+class java.util.ResourceBundle
+class javafx.application.Application
+class javafx.collections.FXCollections
+class javafx.collections.ObservableList
+class javafx.fxml.FXMLLoader
+class javafx.scene.Parent
+class javafx.scene.Scene
+class javafx.scene.control.ComboBox
+class javafx.scene.control.Label
+class javafx.scene.control.ListView
+class javafx.scene.control.TextField
+class javafx.stage.Stage
+enum com.mycompany.rutillas.ClaseE
+interface javafx.fxml.Initializable
+com.mycompany.rutillas.App ..> java.lang.Override
+com.mycompany.rutillas.App ..> java.io.IOException
+com.mycompany.rutillas.App --|> javafx.application.Application
+com.mycompany.rutillas.App ..> javafx.fxml.FXMLLoader
+com.mycompany.rutillas.App ..> javafx.scene.Parent
+com.mycompany.rutillas.App ..> javafx.scene.Scene
+com.mycompany.rutillas.App ..> javafx.stage.Stage
+com.mycompany.rutillas.OpinionsController ..> java.lang.Override
+com.mycompany.rutillas.OpinionsController ..> java.net.URL
+com.mycompany.rutillas.OpinionsController ..> java.util.ResourceBundle
+com.mycompany.rutillas.OpinionsController --|> javafx.fxml.Initializable
+com.mycompany.rutillas.PrimaryController ..> javafx.fxml.FXML
+com.mycompany.rutillas.PrimaryController ..> java.io.IOException
+com.mycompany.rutillas.PrimaryController ..> javafx.scene.control.Label
+com.mycompany.rutillas.PrimaryController ..> javafx.scene.control.TextField
+com.mycompany.rutillas.SecondaryController ..> javafx.fxml.FXML
+com.mycompany.rutillas.SecondaryController ..> java.io.IOException
+com.mycompany.rutillas.SecondaryController ..> java.util.Arrays
+com.mycompany.rutillas.SecondaryController ..> javafx.collections.FXCollections
+com.mycompany.rutillas.SecondaryController ..> javafx.collections.ObservableList
+com.mycompany.rutillas.SecondaryController ..> javafx.scene.control.ComboBox
+com.mycompany.rutillas.SecondaryController ..> javafx.scene.control.ListView
+com.mycompany.rutillas.Usuario ..> java.lang.Override
+@enduml

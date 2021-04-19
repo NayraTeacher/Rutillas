@@ -46,14 +46,16 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <ComboBox fx:id="nivel" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                        <Label text="Label" />
-                        <Label text="Label" GridPane.rowIndex="1" />
-                        <Label text="Label" GridPane.rowIndex="2" />
-                        <Label text="Label" GridPane.rowIndex="3" />
-                        <Label text="Label" GridPane.rowIndex="4" />
+                        <ComboBox fx:id="nivel" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label text="Nombre" />
+                        <Label text="Distancia" GridPane.rowIndex="1" />
+                        <Label text="Desnivel" GridPane.rowIndex="2" />
+                        <Label text="Fecha" GridPane.rowIndex="3" />
+                        <Label text="Nivel dificultad" GridPane.rowIndex="4" />
                         <DatePicker fx:id="fecha" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                         <TextField fx:id="nombre" GridPane.columnIndex="1" />
+                        <TextField fx:id="distancia" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="desnivel" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                      </children>
                   </GridPane>
                </children>
