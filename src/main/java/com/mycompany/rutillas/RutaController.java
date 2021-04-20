@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Date;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.Event;
@@ -34,6 +35,12 @@ public class RutaController {
     private DatePicker fecha;
     @FXML
     private TextField nombre;
+    @FXML
+    private TextField distancia;
+    @FXML
+    private TextField desnivel;
+
+    
     
     
     @FXML
@@ -78,6 +85,17 @@ public class RutaController {
     private void cargarRuta(Ruta ruta) {
         nombre.setText(ruta.getNombre());
         fecha.setValue(ruta.getFecha().toLocalDate());
+        desnivel.setText(String.valueOf(ruta.getDesnivel()));
+        distancia.setText(String.valueOf(ruta.getDistancia()));
+        
+    }
+    
+    private void limpiarRuta(Ruta ruta) {
+        nombre.setText("");
+        fecha.setValue(java.time.LocalDate.now());
+        desnivel.setText("");
+        distancia.setText("");
+        
     }
 
     @FXML
