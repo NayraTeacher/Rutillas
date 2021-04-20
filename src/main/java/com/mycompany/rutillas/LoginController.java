@@ -5,6 +5,8 @@ import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class LoginController {
     
@@ -20,6 +22,8 @@ public class LoginController {
     @FXML
     private TextField pass;
     
+    @FXML
+    private ImageView imagen;
 
     @FXML
     private void login() {
@@ -47,6 +51,11 @@ public class LoginController {
     private void register(){
         AlertsUtil.mostrarError("Registro aun no implementado");
         
+    }
+    
+    public void loadImage(){
+        Image img = new Image(getClass().getResourceAsStream("/images/P1020615.jpg"));
+        imagen.setImage(img);
     }
     
 }

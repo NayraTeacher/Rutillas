@@ -26,8 +26,8 @@ public class App extends Application {
         stage.show();
         
         // Give the controller access to the main app.
-        //RutaController controller = fxmlLoader.getController();
-        //controller.inicializaListados();
+        LoginController controller = fxmlLoader.getController();
+        controller.loadImage();
     }
 
     static void loadRutasWindow() throws IOException {
