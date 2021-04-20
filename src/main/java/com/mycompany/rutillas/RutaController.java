@@ -87,6 +87,7 @@ public class RutaController {
         fecha.setValue(ruta.getFecha().toLocalDate());
         desnivel.setText(String.valueOf(ruta.getDesnivel()));
         distancia.setText(String.valueOf(ruta.getDistancia()));
+        nivel.setValue(niveles.get(ruta.getDificultad()));
         
     }
     
