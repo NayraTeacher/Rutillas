@@ -64,19 +64,33 @@ public class RutaDAO {
     }
 
     public void modificarRuta(Ruta antigua, Ruta nueva) throws SQLException {
-        String sql = "UPDATE rutas SET nombre = ?, distancia = ?, desnivel = ?, fecha = ?, localizacion = ?"
-                + ", dificultad = ?, usuario = ? WHERE idruta = ?";
+        String sql = "{call sp_UpdateRuta (?,?,?,?,?,?,?,?)}";
 
-        PreparedStatement sentencia = conexion.prepareStatement(sql);
-        sentencia.setString(1, nueva.getNombre());
-        sentencia.setFloat(2, nueva.getDistancia());
-        sentencia.setInt(3, nueva.getDesnivel());
-        sentencia.setDate(4, nueva.getFecha());
+        CallableStatement sentencia = conexion.prepareCall(sql);
+        sentencia.setInt(1, antigua.getId());
+        sentencia.setString(2, nueva.getNombre());
+        sentencia.setFloat(3, nueva.getDistancia());
+        sentencia.setInt(4, nueva.getDesnivel());
         sentencia.setString(5, nueva.getLocalizacion());
         sentencia.setInt(6, nueva.getDificultad());
         sentencia.setInt(7, nueva.getUsuario());
-        sentencia.setInt(8, antigua.getId());
-        sentencia.executeUpdate();
+        sentencia.registerOutParameter(8, java.sql.Types.INTEGER);
+  
+        sentencia.execute();
+        
+//        String sql = "UPDATE rutas SET nombre = ?, distancia = ?, desnivel = ?, fecha = ?, localizacion = ?"
+//                + ", dificultad = ?, usuario = ? WHERE idruta = ?";
+//
+//        PreparedStatement sentencia = conexion.prepareStatement(sql);
+//        sentencia.setString(1, nueva.getNombre());
+//        sentencia.setFloat(2, nueva.getDistancia());
+//        sentencia.setInt(3, nueva.getDesnivel());
+//        sentencia.setDate(4, nueva.getFecha());
+//        sentencia.setString(5, nueva.getLocalizacion());
+//        sentencia.setInt(6, nueva.getDificultad());
+//        sentencia.setInt(7, nueva.getUsuario());
+//        sentencia.setInt(8, antigua.getId());
+//        sentencia.executeUpdate();
     }
 
     public List<Ruta> listRutas() throws SQLException {
