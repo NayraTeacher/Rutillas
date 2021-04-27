@@ -63,17 +63,17 @@ public class RutaDAO {
         sentencia.executeUpdate();
     }
 
-    public void modificarRuta(Ruta antigua, Ruta nueva) throws SQLException {
+    public void modificarRuta(Ruta ruta) throws SQLException {
         String sql = "{call sp_UpdateRuta (?,?,?,?,?,?,?,?)}";
 
         CallableStatement sentencia = conexion.prepareCall(sql);
-        sentencia.setInt(1, antigua.getId());
-        sentencia.setString(2, nueva.getNombre());
-        sentencia.setFloat(3, nueva.getDistancia());
-        sentencia.setInt(4, nueva.getDesnivel());
-        sentencia.setString(5, nueva.getLocalizacion());
-        sentencia.setInt(6, nueva.getDificultad());
-        sentencia.setInt(7, nueva.getUsuario());
+        sentencia.setInt(1, ruta.getId());
+        sentencia.setString(2, ruta.getNombre());
+        sentencia.setFloat(3, ruta.getDistancia());
+        sentencia.setInt(4, ruta.getDesnivel());
+        sentencia.setString(5, ruta.getLocalizacion());
+        sentencia.setInt(6, ruta.getDificultad());
+        sentencia.setInt(7, ruta.getUsuario());
         sentencia.registerOutParameter(8, java.sql.Types.INTEGER);
   
         sentencia.execute();

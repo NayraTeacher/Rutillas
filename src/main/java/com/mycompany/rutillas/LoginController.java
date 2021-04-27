@@ -28,9 +28,11 @@ public class LoginController {
     @FXML
     private void login() {
         // App.setRoot("secondary");
+        //IMPORTANTE: este metodo no consulta a base de datos y está sin terminar.
         String usuario = user.getText();
         Usuario u = new Usuario(-1, user.getText(), email.getText(), pass.getText());
         //TODO: comprobaciones nombre, email y password
+        
         boolean ok = u.checkNombre(usuario);
         if (ok){
             resultado.setText("Boton de login pulsado por el usuario " + usuario);
