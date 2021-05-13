@@ -7,10 +7,10 @@ package com.mycompany.rutillas.dao;
 
 import com.mycompany.rutillas.App;
 import com.mycompany.rutillas.modelos.Ruta;
+import com.mycompany.rutillas.modelos.Usuario;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -26,7 +26,8 @@ public class RutaDAO {
     public void conectar() throws ClassNotFoundException, SQLException, IOException {
         
         Properties configuration = new Properties();
-        configuration.load(new FileInputStream(new File(App.class.getResource("connectionDB.properties").getPath())));
+        configuration.load(new FileInputStream(new File(App.class.getResource("newproperties.properties").getPath())));
+        //configuration.load(new FileInputStream(new File(App.class.getResource("connectionDB.properties").getPath())));
         String host = configuration.getProperty("host");
         String port = configuration.getProperty("port");
         String name = configuration.getProperty("name");
@@ -93,11 +94,12 @@ public class RutaDAO {
 //        sentencia.executeUpdate();
     }
 
-    public List<Ruta> listRutas() throws SQLException {
+    public List<Ruta> listRutas(Usuario u) throws SQLException {
         List<Ruta> rutas = new ArrayList<>();
-        String sql = "SELECT * FROM rutas";
+        String sql = "SELECT * FROM rutas WHERE USUARIO=?";
 
         PreparedStatement sentencia = conexion.prepareStatement(sql);
+        sentencia.setInt(1, u.getId());
         ResultSet resultado = sentencia.executeQuery();
         while (resultado.next()) {
             Ruta ruta = new Ruta();

@@ -126,7 +126,7 @@ public class RutaController {
         nivel.setItems(niveles);
         listaRutas.getItems().clear();
         try {
-            List<Ruta> rutas = rdao.listRutas();
+            List<Ruta> rutas = rdao.listRutas(user);
             listaRutas.setItems(FXCollections.observableList(rutas));
 
 
